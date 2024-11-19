@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FINANCIO</title>
+  <style> 
+    body {
+      margin: 0px;
+      background: url('DESIGNPAGE.png') no-repeat center center;
+      background-size: cover;
+    }
+    .header {
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent */
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      align-items: center;
+    }
+
+    .logo {
+      display: block; /* Removes any inline effects */
+      width: 80px;
+      height: 50px;
+      margin-right:5px;
+      border: none; /* Removes border */
+      cursor: pointer;
+      background-blend-mode:  lighten;
+    }
+    .nav-bar {
+      display: flex;
+      gap: 20px;
+      position: relative;
+    }
+
+    .nav-item {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .nav-item span {
+      color: #fff;
+      font-size: 1rem;
+    }
+    
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+    
+    .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black; /* Darker background for better contrast */
+  color: #fff; /* White text for better readability */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for better separation */
+  padding: 10px 0; /* Padding around the entire dropdown */
+  border-radius: 8px; /* Rounded corners for a smooth look */
+  z-index: 1000;
+  min-width: 200px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.dropdown-item {
+  padding: 10px 20px; /* Uniform padding inside each item */
+  cursor: pointer;
+  font-size: 1rem; /* Font size for readability */
+  text-align: left; /* Align text to the left */
+  color: #fff; /* White text */
+  transition: background-color 0.2s, color 0.2s; /* Smooth hover effect */
+}
+
+.dropdown-item:hover {
+  background-color: #0079bf; /* Highlight background on hover */
+  color: #fff; /* Keep text white on hover */
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+/* Fixes excessive spacing between items */
+.dropdown-item:not(:last-child) {
+  margin-bottom: 5px; /* Add small spacing between items */
+}
+
+/* Adjustments for "Solutions" and "Pricing" dropdowns */
+.nav-item:nth-child(3) .dropdown,
+.nav-item:nth-child(2) .dropdown {
+  left: auto;
+  right: 0;
+}
+
+    .announcement-bar {
+      background-color: rgba(192,192,192); /* Semi-transparent */
+      color: rgb(0, 0, 0);
+      text-align: center;
+      padding: 10px;
+      margin-right: 0px;
+    }
+
+    .main-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      background-blend-mode: lighten;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .text-section h1 {
+      font-family: 'Rubik', sans-serif; /* Match the font style */
+      font-size: 2.5rem; /* Adjust size */
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0 0 20px 0;
+      color: #ffffff;
+    }
+
+    .text-section p {
+      font-family: 'Rubik', sans-serif; /* Match the font style */
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #ffffff;
+    }
+
+    .email-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .email-container input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+    }
+
+    .email-container button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      color: white;
+      background-color: #0079bf; /* Trello blue */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .email-container button:hover {
+      background-color: #005a8f; /* Darker blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="header"> 
+    <div class="logo">
+      <img src="Financiologo.jpg" alt="FINANCIO Logo" width="120">
+    </div>
+    <div class="nav-bar">
+      <div class="nav-item">
+      <span>Features &#9662;</span>
+      <div class="dropdown">
+        <div class="dropdown-item" >Feature 1</div>
+        <div class="dropdown-item" style = "word-spacing: 1px;" text-align = "left">use of something</div>
+        <div class="dropdown-item" style = "word-spacing: 1px;">Machine learning build for credit</div>
+    </div>
+      </div>
+      <div class="nav-item">
+      <span>Solutions &#9662;</span>
+      <div class="dropdown">
+        <div class="dropdown-item">Credit</div>
+        <div class="dropdown-item">Debit</div>
+        <div class="dropdown-item">Loans</div>
+      </div>
+      </div>
+      <div class="nav-item">
+      <span>Pricing &#9662;</span>
+      <div class="dropdown">
+        <div class="dropdown-item" style="padding-left: 100px 50px;">For credit</div>
+        <div class="dropdown-item" style="padding-left: 100px 50px;">For Debit</div>
+        <div class="dropdown-item" style="padding-left: 100px 50px;">For loans</div>        
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="announcement-bar">
+    Accelerate your team's work. Learn more.
+  </div>
+  <div class="main-section">
+    <div class="text-section">
+      <h1>Financio provides unique experience with your credit card.</h1>
+      <p>Keep everything in the same place.</p>
+      
+    </div>
+    <div class="email-container">
+      <input type="text" placeholder="Email" />
+      <button class="signup">
+        Sign up–it's free!
+      </button> 
+    </div> 
+    <br>  
+    <p style="text-align: left; font-family: 'Arial', sans-serif; font-weight: bold; font-size: 2rem; color: #0079bf; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase;">
+      ABOUT US
+    </p>
+    <p style="text-align: center; font-family: 'Georgia', serif; font-size: 1.3rem; line-height: 2; color: #444; margin: 0 30px; text-justify: auto; word-spacing: 3px;">
+      Financio is a cutting-edge financial management company dedicated to revolutionizing the way you manage your finances. With a seamless platform, Financio securely handles all your financial data, providing you with real-time insights and helping you make smarter money decisions. What sets Financio apart is its unique rewards system—every time you use your credit card, you earn points that can be redeemed for exciting benefits, making your spending work for you. By combining advanced data security with a customer-first approach, Financio ensures your financial journey is not just safe but also rewarding. Simplify your finances and unlock a world of perks with Financio!
+    </p>        
+  </div>
+</body>
+</html>
