@@ -3,362 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FINANCIO</title>
+  <title>Machine Learning Model Presentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+M54&display=swap" rel="stylesheet">
   <style>
-    /* Background styling from the "code being developed" */
-    html {
-      scroll-behavior: smooth;
-    }
-    @keyframe gradient{
-      50%{
-        transform: scale(1.3)translate(100px;)
-      }
-    }
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: 'Rubik', sans-serif;
-      background: linear-gradient(135deg, rgba(214, 91, 112, 0.7), rgba(28, 28, 161, 0.938), rgba(42, 202, 42, 0.7));
-      min-height: 100vh;
-      overflow: hidden;
-      overflow-y: auto; /* Enable scrolling */
-      overflow-x: hidden; /* Prevent horizontal scrolling */
+      background: black;
+      display: flex;
     }
-    
-    body::before {
-      content: '';
-      position: absolute;
-      height: 100%;
+    .content {
+      margin-left: 0;
+      padding: 20px;
+      transition: margin-left 0.3s;
       width: 100%;
-      backdrop-filter: blur(20px);
-      z-index: -1;
-      animation-delay: 2s;
     }
-
-    /* Styles from the original code */
-    .header {
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-      align-items: center;
-    }
-    .logo{
-      width: auto; 
-      height: 50px;
-      cursor: pointer;
-    }
-    .nav-bar {
-      display: flex;
+    .graph-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
-    }
-    .nav-item {
-      position: relative;
-      cursor: pointer;
-    }
-    .nav-item span {
-      font-size: 1rem;
-      color: #fff;
-    }
-    .dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 999; /* Ensures the dropdown is above other elements */
-  background-color: black;
-  color: #fff;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  padding: 10px 0;
-  border-radius: 8px;
-  min-width: 200px;
-  white-space: nowrap;
-  overflow: hidden; /* Ensures content doesn't overflow */
-}
-
-.nav-item:hover .dropdown {
-  display: block;
-}
-
-.header {
-  position: relative; /* Ensures dropdown aligns to the header's boundaries */
-}
-
-.nav-item {
-  position: relative; /* Ensures dropdown aligns with the nav-item */
-}
-
-.dropdown-item {
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: left;
-  color: #fff;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.dropdown-item:hover {
-  background-color: #0079bf;
-}
-
-/* Prevent the dropdown from overflowing off the screen */
-.nav-item:hover .dropdown {
-  right: auto;
-  left: auto;
-}
-
-.nav-item:last-child .dropdown {
-  right: 0; /* Align the dropdown with the right edge for the last item */
-}
-    .announcement-bar {
-      background-color: rgba(192,192,192);
-      color: rgb(0, 0, 0);
-      text-align: center;
-      padding: 10px;
-    }
-    .main-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px;
-      color: rgb(0, 0, 0);
-      text-align: center;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-    .text-section h1 {
-      font-family: 'Rubik', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 600;
-      line-height: 1.3;
-      margin: 0 0 20px 0;
-      color: #ffffff;
-    }
-    .text-section p {
-      font-family: 'Rubik', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: #ffffff;
-    }
-    .email-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
       margin-top: 20px;
     }
-    .email-container input {
+    .graph {
+      background: #fff;
       padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
       border-radius: 5px;
-      width: 200px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
-    .email-container button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      color: white;
-      background-color: #0079bf;
-      border: none;
+    .graph img {
+      width: 100%;
+      height: auto;
       border-radius: 5px;
-      cursor: pointer;
-    }
-    .email-container button:hover {
-      background-color: #005a8f;
-    }
-    .about-us-title {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
-      animation-delay: 0.5s;
-    }
-    .about-us-paragraph {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1.2s forwards;
-      animation-delay: 1s;
-    }
-
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    .why {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s forwards;
-      animation-delay: 0.5s;
-      text-align: left;
-    }
-    .loader-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #f3f6f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-    .loader {
-      display: flex;
-      gap: 20px;
-    }
-    .loader div {
-      position: relative;
-      width: 24px;
-      height: 24px;
-      background: #3a77d2;
-      border-radius: 50%;
-      animation: bounce 1.8s ease-in-out infinite;
-      animation-delay: calc(0.4s * var(--i));
-      box-shadow: 0 4px 10px rgba(58, 119, 210, 0.5);
-    }
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(100%);
-      }
-      50% {
-        transform: translateY(0);
-      }
-    }
-    .main-content {
-      display: none; /* Initially hidden */
-    }
-    body {
-      scroll-behavior: smooth;
-    }
-    body::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      backdrop-filter: blur(20px);
-      z-index: -1;
-      animation-delay: 2s;
     }
   </style>
 </head>
 <body>
-  <div class="loader-container">
-    <div class="loader">
-      <div style="--i:0"></div>
-      <div style="--i:1"></div>
-      <div style="--i:2"></div>
-      <div style="--i:3"></div>
-      <div style="--i:4"></div>
-    </div>
   </div>
-  <div class="main-content">
-  <div class="header">
-    <div class="logo">
-      <img src="Financiologo.png" alt="FINANCIO Logo" width="120">
-    </div>
-    <div class="nav-bar">
-      <div class="nav-item">
-        <span>Features &#9662;</span>
-        <div class="dropdown">
-          <div class="dropdown-item">Feature 1</div>
-          <div class="dropdown-item" style="word-spacing: 1px;">Use of something</div>
-          <div class="dropdown-item" style="word-spacing: 1px;">Machine learning build for credit</div>
+  <div class="content" id="content">
+    <header>
+      <div class="container">
+        <h1>Customer Database Model</h1>
+      </div>
+    </header>
+    <div class="container">
+      <div class="graph-container">
+        <div class="graph">
+          <h2>PCA Clustering Graph</h2>
+          <img src="Screenshot 2025-01-06 215227.png" alt="PCA Clustering Graph">
+        </div>
+        <div class="graph">
+          <h2>Graph 1</h2>
+          <img src="Screenshot 2025-01-06 215202.png" alt="Graph1">
+        </div>
+        <div class="graph">
+          <h2>Graph 2</h2>
+          <img src="Screenshot 2025-01-08 221252.png" alt="Graph2">
+        </div>
+        <div class="graph">
+          <h2>Graph 3</h2>
+          <img src="Screenshot 2025-01-08 221303.png" alt="Graph3">
+        </div>
+        <div class="graph">
+          <h2>Graph 4</h2>
+          <img src="Screenshot 2025-01-08 221320.png" alt="Graph4">
+        </div>
+        <div class="graph">
+          <h2>Graph 5</h2>
+          <img src="Screenshot 2025-01-08 221335.png" alt="Graph5">
+        </div>
+        <div class="graph">
+          <h2>Graph 6</h2>
+          <img src="Screenshot 2025-01-08 221353.png" alt="Graph6">
+        </div>
+        <div class="graph">
+          <h2>Graph 7</h2>
+          <img src="Screenshot 2025-01-08 221402.png" alt="Graph7">
         </div>
       </div>
-      <div class="nav-item">
-        <span>Solutions &#9662;</span>
-        <div class="dropdown">
-          <div class="dropdown-item">Credit</div>
-          <div class="dropdown-item">Debit</div>
-          <div class="dropdown-item">Loans</div>
-        </div>
-      </div>
-      <div class="nav-item">
-        <span>Pricing &#9662;</span>
-        <div class="dropdown">
-          <div class="dropdown-item">For credit</div>
-          <div class="dropdown-item">For Debit</div>
-          <div class="dropdown-item">For loans</div>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="announcement-bar">
-    Accelerate your team's work. Learn more.
-  </div>
-  <div class="main-section">
-    <div class="text-section">
-      <h1>Financio provides unique experience with your credit card.</h1>
-      <p>Keep everything in the same place.</p>
-    </div>
-    <div class="email-container">
-      <input type="text" placeholder="Email" />
-      <button class="signup">
-        Sign up–it's free!
-      </button>
-    </div>
-    <br>
-    <p class="about-us-title" style="text-align: left; font-family: 'Arial', sans-serif; font-weight: bold; font-size: 2rem; color: #0079bf; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase;">
-      WELCOME TO FINANCIO.
-    </p>
-    <p class="about-us-paragraph" style="text-align: center; font-family: 'Georgia', serif; font-size: 1.3rem; line-height: 2; color: #444; margin: 0 30px; text-justify: auto; word-spacing: 3px;">
-      At Financio, we believe that managing your finances should be seamless, intuitive, and rewarding. Our cutting-edge financial management platform is designed to simplify the way you handle your credit cards and other financial products, ensuring that you keep everything in one place while maximizing the benefits of your spending.
-      <hr width="720.344"/>
-    </p>
-    </div>
-    <div style="max-width: 1200px; margin: auto; padding: 20px;">
-      <div style="flex: 2;">
-        <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px;">Why Choose Financio?</h2>
-        <ul style="list-style: none; padding: 0;">
-          <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Comprehensive Financial Management:</strong> With Financio, you can effortlessly manage all your credit card transactions alongside other financial accounts. Our user-friendly interface allows you to track your spending, view transaction histories, and gain insights into your financial habits—all in real-time. This means no more juggling multiple apps or spreadsheets; everything you need is at your fingertips, allowing you to make informed decisions quickly.
-          </li>
-          <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Unique Rewards System:</strong> What sets Financio apart is our innovative rewards program. Every time you use your credit card through our platform, you earn points that can be redeemed for exciting benefits. Whether it’s cashback, discounts on future purchases, or exclusive offers from partner merchants, we make sure your spending works for you. Imagine earning rewards not just for spending but for smart spending—Financio turns every transaction into an opportunity to save.
-          </li>
-          <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Real-Time Insights:</strong> Gain a deeper understanding of your financial health with our advanced analytics tools. Financio provides real-time insights into your spending patterns, helping you make informed decisions and smarter money choices. You can visualize your expenses through easy-to-read graphs and charts, allowing you to identify trends and adjust your budget accordingly.
-          </li>
-          <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Customer-Centric Approach:</strong> At Financio, we put our customers first. Our dedicated support team is always ready to assist you with any questions or concerns you may have. We are committed to providing a personalized experience that meets your unique financial needs. Your feedback drives our innovation, and we continuously strive to enhance our platform based on what matters most to you.
-          </li>
-          <li style ="margin-bottom:20px;">
-            At Financio, we redefine the potential of credit, debit, and other cards by offering an advanced and seamless rewards system. Our cutting-edge platform not only optimizes your card benefits but also provides a comprehensive and accurate database of monthly expenditures. By analyzing purchase data, we deliver detailed insights and updates on weekly, monthly, and yearly spending patterns that empower you to take control of your finances.
-            To ensure the highest level of security and privacy, we utilize federated learning—a state-of-the-art process that guarantees your data remains safe and confidential. With this technology, even our databases do not retain any personal information, as all data is securely erased immediately after the transactional analysis is completed. This innovative approach empowers you to make informed decisions, ensuring smarter financial management and responsible spending, all while safeguarding your privacy.
-          </li>
-        </ul>
-      </div>
-      <!-- About Us Section -->
-      <div style="flex: 2; margin-bottom: 20px; padding: 0; text-align: left;">
-        <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px;">About Us</h2>
-        <p>Financio began as a simple idea to empower individuals to manage their finances better. Started by two childhood friends, it has grown into a platform serving thousands, helping users align daily spending with their personal goals.  We simplify expense tracking, provide real-time insights, and enable users to achieve financial goals—whether saving, reducing debt, or budgeting. Using AI, we offer tailored recommendations that optimize spending and foster financial success.</p>
-        <p>We simplify expense tracking, provide real-time insights, and enable users to achieve financial goals—whether saving, reducing debt, or budgeting. Using AI, we offer tailored recommendations that optimize spending and foster financial success.</p>
-        <h3>Our Core Beliefs</h3>
-        <ul style="list-style: none; padding-left: 0;">
-          <li style="margin-bottom: 15px;"><strong>Financial Empowerment:</strong> Everyone deserves control over their money.</li>
-          <li style="margin-bottom: 15px;"><strong>Innovation for Good:</strong>AI-driven tools make finances simple and actionable.</li>
-          <li style="margin-bottom: 15px;"><strong>Simplicity Meets Effectiveness:</strong> Intuitive tools fit seamlessly into daily life.</li>
-          <li style="margin-bottom: 15px;"><strong>Community-Driven Growth:</strong>Built for and inspired by our users.</li>
-        </ul>
-        <h3>Where We’re Headed</h3>
-        <p>Financio is not just a financial app—it’s a movement to redefine how people think about their money. Our goal is to expand our platform to include even more personalized features like advanced savings plans tailored specifically for individual goals, custom-tailored financial challenges that encourage better spending habits, and a rewards ecosystem that celebrates financial progress.</p>
-        <p>As we grow, we remain rooted in the core principle that started it all: helping people achieve their financial aspirations through user-friendly technology and insightful analytics. Together with our users, we’re shaping the future of personal finance—one transaction at a time.</p>
-      </div>               
-<script>
-    window.addEventListener('load', function () {
-      const loaderContainer = document.querySelector('.loader-container');
-      const mainContent = document.querySelector('.main-content');
-
-      setTimeout(() => {
-        loaderContainer.style.display = 'none'; // Hide the loader
-        mainContent.style.display = 'block';   // Show the main content
-      }, 3000); // Adjust delay time (in milliseconds) as needed
-    });
-</script>
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const content = document.getElementById('content');
+      if (sidebar.style.width === '0px' || sidebar.style.width === '') {
+        sidebar.style.width = '250px';
+        content.style.marginLeft = '250px';
+      } else {
+        sidebar.style.width = '0';
+        content.style.marginLeft = '0';
+      }
+    }
+  </script>
 </body>
 </html>
