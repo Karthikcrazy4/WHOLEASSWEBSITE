@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Jersey+M54&display=swap" rel="stylesheet">
   <title>FINANCIO</title>
-  <link rel="Feature1"  class="dropdown-item" href="Feature1.html">
+  <link rel="Feature1"  class="dropdown-item" href="Feature1.html">   
   <style>
     /* Background styling from the "code being developed" */
     html {
@@ -52,7 +53,7 @@
     }
     .nav-bar {
       display: flex;
-      gap: 20px;
+      gap: 10px;
     }
     .nav-item {
       position: relative;
@@ -73,7 +74,7 @@
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
   padding: 10px 0;
   border-radius: 8px;
-  min-width: 200px;
+  min-width: 100px;
   white-space: nowrap;
   overflow: hidden; /* Ensures content doesn't overflow */
 }
@@ -250,8 +251,72 @@
     margin: 0;
     padding: 0;
   }
-
+  .buttonfeature1 {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: white;
+     
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .buttonfeature1:hover {
+      background-color: #0079bf;
+    }
+    .dropdown1 {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 100%;
+      z-index: 999;
+      background-color: black;
+      color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      padding: 10px 0;
+      border-radius: 8px;
+      min-width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+    }
     
+.nav-item:hover .dropdown1 {
+  display: block;
+}
+
+.header {
+  position: relative; /* Ensures dropdown aligns to the header's boundaries */
+}
+
+.nav-item {
+  position: relative; /* Ensures dropdown aligns with the nav-item */
+}
+
+.dropdown-item1 {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: left;
+  color: #fff;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown1-item:hover {
+  background-color: #0079bf;
+}
+
+/* Prevent the dropdown from overflowing off the screen */
+.nav-item:hover .dropdown1 {
+  right: auto;
+  left: auto;
+}
+
+.nav-item:last-child .dropdown1 {
+  right: 0; /* Align the dropdown with the right edge for the last item */
+}
   </style>
 </head>
 <body>
@@ -272,11 +337,11 @@
     <div class="nav-bar">
       <div class="nav-item">
         <span>Features &#9662;</span>
-        <div class="dropdown"> 
+        <div class="dropdown1"> 
           <div class="dropdown-item" style="word-spacing: 1px;">
-          <a href="Feature1.html">Feature 1</a></div>
-          <div class="dropdown-item" style="word-spacing: 1px;">Use of something</div>
-          <div class="dropdown-item" style="word-spacing: 1px;">Machine learning build for credit</div>
+          <a href="Feature1.html" class="buttonfeature1">Feature 1</a></div>
+          <div class="dropdown-item" style="word-spacing: 1px;">Feature 2 </div>
+          <div class="dropdown-item" style="word-spacing: 1px;">Feature 3</div>
         </div>
       </div>
       <div class="nav-item">
@@ -307,12 +372,12 @@
     </div>
     <div class="email-container">
       <input type="text" placeholder="Email" />
-      <button class="signup">
+      <button class="signup"> <a href="login.html">
         Sign up–it's free!
-      </button>
+       </a></button>
     </div>
     <br>
-    <p class="about-us-title" style="text-align: left; font-family: 'Arial', sans-serif; font-weight: bold; font-size: 2rem; color: #0079bf; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase;">
+    <p class="about-us-title" style="text-align: left; font-family: 'Jersey M54', sans-serif; font-weight: bold; font-size: 2rem; color: #0079bf; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase;">
       WELCOME TO FINANCIO.
     </p>
     <p class="about-us-paragraph" style="text-align: center; font-family: 'Georgia', serif; font-size: 1.3rem; line-height: 2; color: #444; margin: 0 30px; text-justify: auto; word-spacing: 3px;">
@@ -320,47 +385,46 @@
     </p>
     <hr class="full-width-hr"/>
     </div>
-    <div style="max-width: 1200px; margin: auto; padding: 20px; display: flex; gap: 20px;">
-      <div style="flex: 2;">
-        <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px;">Why Choose Financio?</h2>
+    <div style="width: 100%; margin: 0; padding: 20px; display: flex; gap: 20px;">
+      <div style="flex: 2; max-width: 60%;">
+        <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 15px;">Why Choose Financio?</h2>
         <ul style="list-style: none; padding: 0;">
           <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Comprehensive Financial Management:</strong> With Financio, you can effortlessly manage all your credit card transactions alongside other financial accounts. Our user-friendly interface allows you to track your spending, view transaction histories, and gain insights into your financial habits—all in real-time. This means no more juggling multiple apps or spreadsheets; everything you need is at your fingertips, allowing you to make informed decisions quickly.
+            <strong style="font-family: 'Georgia'; font-size: 1rem;">Comprehensive Financial Management:</strong> With Financio, you can effortlessly manage all your credit card transactions alongside other financial accounts. Our user-friendly interface allows you to track your spending, view transaction histories, and gain insights into your financial habits—all in real-time. This means no more juggling multiple apps or spreadsheets; everything you need is at your fingertips, allowing you to make informed decisions quickly.
           </li>
           <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Unique Rewards System:</strong> What sets Financio apart is our innovative rewards program. Every time you use your credit card through our platform, you earn points that can be redeemed for exciting benefits. Whether it’s cashback, discounts on future purchases, or exclusive offers from partner merchants, we make sure your spending works for you. Imagine earning rewards not just for spending but for smart spending—Financio turns every transaction into an opportunity to save.
+            <strong style="font-family: 'Georgia'; font-size: 1rem;">Unique Rewards System:</strong> What sets Financio apart is our innovative rewards program. Every time you use your credit card through our platform, you earn points that can be redeemed for exciting benefits. Whether it’s cashback, discounts on future purchases, or exclusive offers from partner merchants, we make sure your spending works for you. Imagine earning rewards not just for spending but for smart spending—Financio turns every transaction into an opportunity to save.
           </li>
           <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Real-Time Insights:</strong> Gain a deeper understanding of your financial health with our advanced analytics tools. Financio provides real-time insights into your spending patterns, helping you make informed decisions and smarter money choices. You can visualize your expenses through easy-to-read graphs and charts, allowing you to identify trends and adjust your budget accordingly.
+            <strong style="font-family: 'Georgia'; font-size: 1rem;">Real-Time Insights:</strong> Gain a deeper understanding of your financial health with our advanced analytics tools. Financio provides real-time insights into your spending patterns, helping you make informed decisions and smarter money choices. You can visualize your expenses through easy-to-read graphs and charts, allowing you to identify trends and adjust your budget accordingly.
           </li>
           <li style="margin-bottom: 15px;">
-            <strong style="font-family: 'Georgia';">Customer-Centric Approach:</strong> At Financio, we put our customers first. Our dedicated support team is always ready to assist you with any questions or concerns you may have. We are committed to providing a personalized experience that meets your unique financial needs. Your feedback drives our innovation, and we continuously strive to enhance our platform based on what matters most to you.
+            <strong style="font-family: 'Georgia'; font-size: 1rem;">Customer-Centric Approach:</strong> At Financio, we put our customers first. Our dedicated support team is always ready to assist you with any questions or concerns you may have. We are committed to providing a personalized experience that meets your unique financial needs. Your feedback drives our innovation, and we continuously strive to enhance our platform based on what matters most to you.
           </li>
           <li style="margin-bottom: 20px;">
-            At Financio, we redefine the potential of credit, debit, and other cards by offering an advanced and seamless rewards system. Our cutting-edge platform not only optimizes your card benefits but also provides a comprehensive and accurate database of monthly expenditures. By analyzing purchase data, we deliver detailed insights and updates on weekly, monthly, and yearly spending patterns that empower you to take control of your finances.
+            <strong style="font-family: 'Georgia'; font-size: 1rem;">Advanced and Seamless Rewards System:</strong> At Financio, we redefine the potential of credit, debit, and other cards by offering an advanced and seamless rewards system. Our cutting-edge platform not only optimizes your card benefits but also provides a comprehensive and accurate database of monthly expenditures. By analyzing purchase data, we deliver detailed insights and updates on weekly, monthly, and yearly spending patterns that empower you to take control of your finances.
           </li>
         </ul>
       </div>
       <div style="flex: 1;">
-        <img src="Project/alexander-schimmeck-WhBMPxr2RhA-unsplash.jpg" alt="Money" style="width: 100%; height: auto;">
+        <img src="alexander-schimmeck-WhBMPxr2RhA-unsplash.jpg" alt="Money" style="width: 70%; height: auto; margin-top: 95px;">
       </div>
     </div>
-      <!-- About Us Section -->
-      <div style="flex: 2; margin-bottom: 20px; padding: 0; text-align: left;">
-        <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px;">About Us</h2>
-        <p>Financio began as a simple idea to empower individuals to manage their finances better. Started by two childhood friends, it has grown into a platform serving thousands, helping users align daily spending with their personal goals.  We simplify expense tracking, provide real-time insights, and enable users to achieve financial goals—whether saving, reducing debt, or budgeting. Using AI, we offer tailored recommendations that optimize spending and foster financial success.</p>
-        <p>We simplify expense tracking, provide real-time insights, and enable users to achieve financial goals—whether saving, reducing debt, or budgeting. Using AI, we offer tailored recommendations that optimize spending and foster financial success.</p>
-        <h3>Our Core Beliefs</h3>
-        <ul style="list-style: none; padding-left: 0;">
-          <li style="margin-bottom: 15px;"><strong>Financial Empowerment:</strong> Everyone deserves control over their money.</li>
-          <li style="margin-bottom: 15px;"><strong>Innovation for Good:</strong>AI-driven tools make finances simple and actionable.</li>
-          <li style="margin-bottom: 15px;"><strong>Simplicity Meets Effectiveness:</strong> Intuitive tools fit seamlessly into daily life.</li>
-          <li style="margin-bottom: 15px;"><strong>Community-Driven Growth:</strong>Built for and inspired by our users.</li>
-        </ul>
-        <h3>Where We’re Headed</h3>
-        <p>Financio is not just a financial app—it’s a movement to redefine how people think about their money. Our goal is to expand our platform to include even more personalized features like advanced savings plans tailored specifically for individual goals, custom-tailored financial challenges that encourage better spending habits, and a rewards ecosystem that celebrates financial progress.</p>
-        <p>As we grow, we remain rooted in the core principle that started it all: helping people achieve their financial aspirations through user-friendly technology and insightful analytics. Together with our users, we’re shaping the future of personal finance—one transaction at a time.</p>
-      </div>               
+    <div style="flex: 2; margin-bottom: 20px; padding: 0; text-align: left;">
+      <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px; font-family: 'Jersey M54', sans-serif;">About Us</h2>
+      <p>Financio was born from a simple idea: making personal finance easy and effective. Though newly founded, our platform empowers users to track expenses, gain real-time insights, and align spending with their goals. Leveraging AI, we deliver personalized recommendations to help users save, budget, and achieve financial success. We're building the future of smarter money management.</p>
+      <p>We simplify expense tracking, provide real-time insights, and enable users to achieve financial goals—whether saving, reducing debt, or budgeting. Using AI, we offer tailored recommendations that optimize spending and foster financial success.</p>
+      <h3>Our Core Beliefs</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 15px;"><strong>Financial Empowerment:</strong> Everyone deserves control over their money.</li>
+        <li style="margin-bottom: 15px;"><strong>Innovation for Good:</strong>AI-driven tools make finances simple and actionable.</li>
+        <li style="margin-bottom: 15px;"><strong>Simplicity Meets Effectiveness:</strong> Intuitive tools fit seamlessly into daily life.</li>
+        <li style="margin-bottom: 15px;"><strong>Community-Driven Growth:</strong>Built for and inspired by our users.</li>
+      </ul>
+      <h3>Where We’re Headed</h3>
+      <p>Financio is not just a financial app—it’s a movement to redefine how people think about their money. Our goal is to expand our platform to include even more personalized features like advanced savings plans tailored specifically for individual goals, custom-tailored financial challenges that encourage better spending habits, and a rewards ecosystem that celebrates financial progress.</p>
+      <p>As we grow, we remain rooted in the core principle that started it all: helping people achieve their financial aspirations through user-friendly technology and insightful analytics. Together with our users, we’re shaping the future of personal finance—one transaction at a time.</p>
+    </div>              
 <script>
     window.addEventListener('load', function () {
       const loaderContainer = document.querySelector('.loader-container');
