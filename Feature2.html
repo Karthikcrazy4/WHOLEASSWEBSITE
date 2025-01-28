@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federated Learning</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+            background: linear-gradient(90deg, #1e293b, #4b5563);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #111827;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #60a5fa;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3b82f6;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px 0;
+            background: #1f2937;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #60a5fa;
+        }
+
+        section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        section ul li {
+            font-size: 1.1em;
+            margin: 10px 0;
+            padding: 10px;
+            background: #374151;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        footer {
+            background: #111827;
+            padding: 20px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Federated Learning</h1>
+        <nav>
+            <a href="#explained">Explained</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#challenges">Challenges</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="explained">
+            <h2>Federated Learning Explained</h2>
+            <ul>
+                <li>Collaborative training of a model across distributed data sources without sharing sensitive data.</li>
+                <li>Participants train a pre-trained model locally and send encrypted updates to a central server.</li>
+                <li>The server aggregates updates iteratively to refine the model.</li>
+                <li>Types of Federated Learning:
+                    <ul>
+                        <li><strong>Horizontal:</strong> Similar datasets used for training.</li>
+                        <li><strong>Vertical:</strong> Complementary datasets combined (e.g., movie and book reviews).</li>
+                        <li><strong>Transfer:</strong> Pre-trained model adapted for a new task.</li>
+                    </ul>
+                </li>
+                <li>Applications include fraud detection, healthcare diagnostics, and personalized services.</li>
+            </ul>
+        </section>
+
+        <section id="benefits">
+            <h2>Benefits of Breaking Down Data Silos</h2>
+            <ul>
+                <li>Enables data utilization without compromising privacy or compliance.</li>
+                <li>Applications include:
+                    <ul>
+                        <li><strong>Health care:</strong> Aggregated medical data for disease detection.</li>
+                        <li><strong>Banking:</strong> Enhancing credit scoring and fraud detection.</li>
+                        <li><strong>Insurance:</strong> Road and driver safety improvements using pooled claims data.</li>
+                        <li><strong>Manufacturing:</strong> Detecting defects and machine breakdowns.</li>
+                        <li><strong>Edge devices:</strong> Data from sensors for climate predictions.</li>
+                    </ul>
+                </li>
+                <li>Preserves privacy while unlocking data potential.</li>
+            </ul>
+        </section>
+
+        <section id="privacy">
+            <h2>Balancing the Privacy-Accuracy Trade-off</h2>
+            <ul>
+                <li>Exchanging model updates risks exposing data to inference attacks.</li>
+                <li>Privacy solutions include:
+                    <ul>
+                        <li><strong>Secure multi-party computation:</strong> Encrypts updates.</li>
+                        <li><strong>Differential privacy:</strong> Adds noise to data.</li>
+                    </ul>
+                </li>
+                <li>Application-specific trade-offs between privacy and accuracy.</li>
+            </ul>
+        </section>
+
+        <section id="challenges">
+            <h2>Challenges: Efficiency, Transparency, and Incentives</h2>
+            <ul>
+                <li><strong>Efficiency:</strong> High bandwidth and computational demands.
+                    <ul>
+                        <li>Solutions: Model pruning and compression.</li>
+                    </ul>
+                </li>
+                <li><strong>Transparency:</strong> Ensuring accuracy and fairness without accessing private data.
+                    <ul>
+                        <li>Solutions: Encryption frameworks like DeTrust for auditing and consensus.</li>
+                    </ul>
+                </li>
+                <li><strong>Data control:</strong> Retraining models when hosts leave. Solutions are emerging to minimize full retraining.</li>
+                <li><strong>Trust and incentives:</strong> Addressing phony data contributions with incentives for truthful participation.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Federated Learning Overview. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -20,7 +20,12 @@
       margin: 0;
       padding: 0;
       font-family: 'Rubik', sans-serif;
-      background: linear-gradient(135deg, rgba(214, 91, 112, 0.7), rgba(28, 28, 161, 0.938), rgba(42, 202, 42, 0.7));
+      background: linear-gradient(90deg, 
+        rgba(190, 239, 0, 0.8), 
+        rgba(255, 0, 40, 0.8), 
+        rgba(101, 122, 0, 0.8), 
+        rgba(20, 0, 198, 0.8)
+      );
       min-height: 100vh;
       overflow: hidden;
       overflow-y: auto; /* Enable scrolling */
@@ -96,12 +101,19 @@
   cursor: pointer;
   font-size: 1rem;
   text-align: left;
-  color: #fff;
+  color: #002fff;
   transition: background-color 0.2s, color 0.2s;
 }
 
+.dropdown-item {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
 .dropdown-item:hover {
-  background-color: #0079bf;
+  background-color: #f1f1f1;
+  color: #333;
 }
 
 /* Prevent the dropdown from overflowing off the screen */
@@ -250,23 +262,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-  .buttonfeature1 {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      color: white;
-     
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      text-align: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .buttonfeature1:hover {
-      background-color: #0079bf;
-    }
+  } 
     .dropdown1 {
       display: none;
       position: absolute;
@@ -300,12 +296,12 @@
   cursor: pointer;
   font-size: 1rem;
   text-align: left;
-  color: #fff;
+  color: #0546fa;
   transition: background-color 0.2s, color 0.2s;
 }
 
 .dropdown1-item:hover {
-  background-color: #0079bf;
+  background-color: #0b3ee4;
 }
 
 /* Prevent the dropdown from overflowing off the screen */
@@ -316,6 +312,19 @@
 
 .nav-item:last-child .dropdown1 {
   right: 0; /* Align the dropdown with the right edge for the last item */
+}
+.fwh-slide{
+  box-sizing: border-box;
+  height:5vh;
+}
+.fwh-slide2{
+  box-sizing: border-box;
+  height: 90vh;
+  background-color:black ;
+      background-size: 300% 300%;
+      animation: gradientMove 10s ease infinite;
+      font-family: Arial, sans-serif;
+      color: white;
 }
   </style>
 </head>
@@ -339,26 +348,11 @@
         <span>Features &#9662;</span>
         <div class="dropdown1"> 
           <div class="dropdown-item" style="word-spacing: 1px;">
-          <a href="Feature1.html" class="buttonfeature1">Feature 1</a></div>
-          <div class="dropdown-item" style="word-spacing: 1px;">Feature 2 </div>
+          <div class="dropdown-item" type onclick="location.href='Feature1.html'">Feature 1</a></div>
+          <div class="dropdown-item" type onclick="location.href='Feature2.html'">Feature 2 </div>
           <div class="dropdown-item" style="word-spacing: 1px;">Feature 3</div>
         </div>
       </div>
-      <div class="nav-item">
-        <span>Solutions &#9662;</span>
-        <div class="dropdown">
-          <div class="dropdown-item">Credit</div>
-          <div class="dropdown-item">Debit</div>
-          <div class="dropdown-item">Loans</div>
-        </div>
-      </div>
-      <div class="nav-item">
-        <span>Pricing &#9662;</span>
-        <div class="dropdown">
-          <div class="dropdown-item">For credit</div>
-          <div class="dropdown-item">For Debit</div>
-          <div class="dropdown-item">For loans</div>
-        </div>
       </div>
     </div>
   </div>
@@ -371,20 +365,22 @@
       <p>Keep everything in the same place.</p>
     </div>
     <div class="email-container">
-      <input type="text" placeholder="Email" />
-      <button class="signup"> <a href="login.html"></a>
+      <button class="signup" type onclick="location.href='login.html'">
         Sign up–it's free!
        </button>
     </div>
     <br>
+    <section class="fwh-slide"></section>
     <p class="about-us-title" style="text-align: left; font-family: 'Jersey M54', sans-serif; font-weight: bold; font-size: 2rem; color: #0079bf; letter-spacing: 3px; margin-bottom: 15px; text-transform: uppercase;">
       WELCOME TO FINANCIO.
     </p>
     <p class="about-us-paragraph" style="text-align: center; font-family: 'Georgia', serif; font-size: 1.3rem; line-height: 2; color: #444; margin: 0 30px; text-justify: auto; word-spacing: 3px;">
       At Financio, we believe that managing your finances should be seamless, intuitive, and rewarding. Our cutting-edge financial management platform is designed to simplify the way you handle your credit cards and other financial products, ensuring that you keep everything in one place while maximizing the benefits of your spending. 
     </p>
+    </section>
     <hr class="full-width-hr"/>
-    </div>
+    </div>  
+    <section class="fwh-slide2">
     <div style="width: 100%; margin: 0; padding: 20px; display: flex; gap: 20px;">
       <div style="flex: 2; max-width: 60%;">
         <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 15px;">Why Choose Financio?</h2>
@@ -410,21 +406,23 @@
         <img src="alexander-schimmeck-WhBMPxr2RhA-unsplash.jpg" alt="Money" style="width: 70%; height: auto; margin-top: 95px;">
       </div>
     </div>
-    <div style="flex: 2; margin-bottom: 20px; padding: 0; text-align: left;">
+
+    <div style="flex: 2; margin-bottom: 20px; padding: 0; text-align: left; padding-left: 20px;">
       <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px;">About Us</h2>
-      <p>Financio began as a simple idea to empower individuals to manage their finances better. Started by two childhood friends, it has grown into a platform serving thousands, helping users align daily spending with their personal goals.  We simplify expense tracking, provide real-time insights, and enable users to achieve financial goals—whether saving, reducing debt, or budgeting. Using AI, we offer tailored recommendations that optimize spending and foster financial success.</p>
-      <p>We simplify expense tracking, provide real-time insights, and enable users to achieve financial goals—whether saving, reducing debt, or budgeting. Using AI, we offer tailored recommendations that optimize spending and foster financial success.</p>
+      <div style ="flex: 1;">
+      <img align="right" src="christine-roy-ir5MHI6rPg0-unsplash.jpg" alt="Money" style="width: 30%; height: auto; margin-bottom: 200px; margin-right: 152px; clip-path: inset(0px 45px 100px 0px);">
+    </div>
+    <ul style="list-style: none; padding-left: 0;">
+      <li style= font:size 1rem>Financio was founded to simplify financial management. Using AI, we empower thousands with real-time insights and personalized recommendations, helping users align spending with their goals.</li>
       <h3>Our Core Beliefs</h3>
       <ul style="list-style: none; padding-left: 0;">
-        <li style="margin-bottom: 15px;"><strong>Financial Empowerment:</strong> Everyone deserves control over their money.</li>
+        <li style="margin-bottom: 15px; font: size 1rem;"><strong>Financial Empowerment:</strong> Everyone deserves control over their money.</li>
         <li style="margin-bottom: 15px;"><strong>Innovation for Good:</strong>AI-driven tools make finances simple and actionable.</li>
         <li style="margin-bottom: 15px;"><strong>Simplicity Meets Effectiveness:</strong> Intuitive tools fit seamlessly into daily life.</li>
         <li style="margin-bottom: 15px;"><strong>Community-Driven Growth:</strong>Built for and inspired by our users.</li>
       </ul>
-      <h3>Where We’re Headed</h3>
-      <p>Financio is not just a financial app—it’s a movement to redefine how people think about their money. Our goal is to expand our platform to include even more personalized features like advanced savings plans tailored specifically for individual goals, custom-tailored financial challenges that encourage better spending habits, and a rewards ecosystem that celebrates financial progress.</p>
-      <p>As we grow, we remain rooted in the core principle that started it all: helping people achieve their financial aspirations through user-friendly technology and insightful analytics. Together with our users, we’re shaping the future of personal finance—one transaction at a time.</p>
-    </div>         
+    </div> 
+    </section>
 <script>
     window.addEventListener('load', function () {
       const loaderContainer = document.querySelector('.loader-container');
